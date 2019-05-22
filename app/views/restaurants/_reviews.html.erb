@@ -1,10 +1,21 @@
-<% reviews.each do |review| %>
+<% reviews.reverse.each do |review| %>
   <div class="card w-100">
     <div class="card-body">
-      <div class="card-subtitle">Content</div>
-      <p><%= review.content %></p>
-      <div class="card-subtitle">Rating</div>
-      <p><%= review.rating %></p>
+      <div class="row">
+        <div class="px-5 py-3">
+          <p><%= review.content %></p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="text-center mr-3">
+          <div class="card-subtitle">Rating</div>
+          <p><%= review.rating %></p>
+        </div>
+        <div class="text-center">
+          <div class="card-subtitle">Created</div>
+          <p><%= review.created_at.in_time_zone('Australia/Sydney').strftime('%e %B %Y - %l:%M:%S %p') %></p>
+        </div>
+      </div>
     </div>
   </div>
 <% end %>

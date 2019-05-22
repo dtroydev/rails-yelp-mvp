@@ -5,7 +5,10 @@ class RestaurantsController < ApplicationController
     @restaurants = Restaurant.all
   end
 
-  def show; end
+  def show
+    @review = Review.new
+    @ratings = Review::RATINGS
+  end
 
   def new
     @restaurant = Restaurant.new

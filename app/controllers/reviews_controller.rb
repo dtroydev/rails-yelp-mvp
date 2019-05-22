@@ -1,14 +1,4 @@
 class ReviewsController < ApplicationController
-  def index
-    @reviews = Review.all
-  end
-
-  def new
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = Review.new
-    @ratings = Review::RATINGS
-  end
-
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
@@ -16,7 +6,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to @review.restaurant
     else
-      render 'new'
+      render 'restaurants/show'
     end
   end
 
