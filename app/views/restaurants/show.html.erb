@@ -1,0 +1,15 @@
+<%= render 'shared/navbar' %>
+<div class="container show">
+  <div class="row mt-5 justify-content-center">
+    <%= render 'restaurantcard', restaurant: @restaurant, review_link: false, back_link: true  %>
+  </div>
+  <div class="row justify-content-center">
+    <%= link_to "Add Review", new_restaurant_review_path(@restaurant), class: 'btn btn-dark' %>
+  </div>
+  <div class="row mt-5 justify-content-center mb-3">
+    <h2>Reviews</h2>
+  </div>
+  <div class="row justify-content-center">
+    <%= render 'reviews', reviews: @restaurant.reviews %>
+  </div>
+</div>

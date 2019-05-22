@@ -1,0 +1,14 @@
+<%= render 'shared/navbar' %>
+<div class="container index">
+  <div class="row justify-content-center heading">
+    <h1>Restaurants</h1>
+  </div>
+  <div class="row justify-content-center mb-5">
+    <%= link_to "Add Restaurant", new_restaurant_path, class: 'btn btn-dark' %>
+  </div>
+  <div class="row justify-content-around">
+    <% @restaurants.each do |restaurant| %>
+      <%= render 'restaurantcard', restaurant: restaurant, details_link: true %>
+    <% end %>
+  </div>
+</div>

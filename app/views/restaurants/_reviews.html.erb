@@ -1,0 +1,10 @@
+<% reviews.each do |review| %>
+  <div class="card w-100">
+    <div class="card-body">
+      <div class="card-subtitle">Content</div>
+      <p><%= review.content %></p>
+      <div class="card-subtitle">Rating</div>
+      <p><%= review.rating %></p>
+    </div>
+  </div>
+<% end %>

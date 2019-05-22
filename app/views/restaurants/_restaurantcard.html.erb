@@ -1,0 +1,26 @@
+<% details_link = false if local_assigns[:details_link].nil? %>
+<% back_link = false if local_assigns[:review_link].nil? %>
+<div class="card">
+  <h5 class="card-title text-center">
+    <%= restaurant.name %>
+  </h5>
+  <img src="http://loremflickr.com/254/300/house?<%=rand%>" />
+  <div class="card-body d-flex flex-column">
+    <div class="card-subtitle">Address</div>
+    <p><%= restaurant.address %></p>
+    <div class="card-subtitle">Category</div>
+    <p><%= restaurant.category %></p>
+    <div class="card-subtitle">Phone Number</div>
+    <p><%= restaurant.phone_number %></p>
+    <% if details_link %>
+      <div class="text-center mt-auto">
+        <%= link_to 'Details', restaurant, class: 'btn btn-dark w-50' %>
+      </div>
+    <% end %>
+    <% if back_link %>
+      <div class="text-center mt-auto">
+        <%= link_to 'Back', :back, class: 'btn btn-dark w-50' %>
+      </div>
+    <% end %>
+  </div>
+</div>
